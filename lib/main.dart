@@ -24,6 +24,16 @@ class MyApp extends StatelessWidget {
           locale: const Locale('en'),
           theme: ThemeData(
             brightness: Brightness.light,
+            fontFamily: 'Roboto',
+            colorScheme: Theme.of(context).colorScheme.copyWith(
+                  primary: const Color(0xff3A58F5),
+                ),
+            textTheme: TextTheme(
+              headlineLarge: TextStyle(
+                fontSize: 47.sp,
+                color: Colors.white,
+              ),
+            ),
           ),
           title: 'Lamp',
           home: const Splash(),
