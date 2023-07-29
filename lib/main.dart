@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             brightness: Brightness.light,
           ),
-          title: 'Quoty',
+          title: 'Lamp',
           home: const Splash(),
         );
       },
