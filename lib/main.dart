@@ -33,6 +33,19 @@ class MyApp extends StatelessWidget {
                 fontSize: 47.sp,
                 color: Colors.white,
               ),
+              displaySmall: TextStyle(
+                fontSize: 18.sp,
+                color: Colors.white,
+              ),
+              displayMedium: TextStyle(
+                fontSize: 18.sp,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+              labelSmall: TextStyle(
+                fontSize: 16.sp,
+                color: Colors.black,
+              ),
             ),
           ),
           title: 'Lamp',

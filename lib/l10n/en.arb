@@ -1,4 +1,7 @@
 {
  "@@locale": "en",
- "lamp" : "Lamp"
+ "lamp" : "Lamp",
+ "manyOptions" : "Many options",
+ "weProvide" : "We provide you with several offices in all countries of the world to facilitate obtaining the service",
+ "next" : "next"
  }

@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lamp/Screens/onBoarding.dart';
+
+import '../Helpers/NavigatorHelper.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -10,8 +13,16 @@ class Splash extends StatefulWidget {
   State<Splash> createState() => _SplashState();
 }
 
-class _SplashState extends State<Splash> {
+class _SplashState extends State<Splash> with NavigatorHelper {
   AppLocalizations get appLocale => AppLocalizations.of(context)!;
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(const Duration(seconds: 3),
+        () => jump(context, const onBoarding(), replace: true));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
