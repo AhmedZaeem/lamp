@@ -6,10 +6,10 @@ class My_Button extends StatefulWidget {
   final double buttonRadius;
   final double textPadding;
   final Color? buttonColor;
+  final Border? btnBoarder;
   final Color textColor;
   final String buttonText;
   final bool hasShadow;
-  final bool hasSplash;
   final bool enabled;
   final double? height;
   final TextStyle? textStyle;
@@ -17,10 +17,10 @@ class My_Button extends StatefulWidget {
     required this.buttonText,
     this.enabled = true,
     this.textStyle,
+    this.btnBoarder,
     this.textPadding = 0,
-    this.buttonRadius = 16,
+    this.buttonRadius = 24,
     this.hasShadow = false,
-    this.hasSplash = true,
     this.height,
     this.textColor = Colors.white,
     this.buttonColor,
@@ -35,19 +35,14 @@ class My_Button extends StatefulWidget {
 class _My_ButtonState extends State<My_Button> {
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      splashColor: !widget.hasSplash
-          ? Colors.transparent
-          : Theme.of(context).colorScheme.primary,
-      highlightColor: !widget.hasSplash
-          ? Colors.transparent
-          : Theme.of(context).colorScheme.primary,
+    return GestureDetector(
       onTap: widget.enabled ? widget.onTap : null,
       child: Container(
         height: widget.height,
         padding: EdgeInsets.symmetric(vertical: 16.h),
         alignment: Alignment.center,
         decoration: BoxDecoration(
+          border: widget.btnBoarder,
           boxShadow: widget.hasShadow
               ? [
                   BoxShadow(

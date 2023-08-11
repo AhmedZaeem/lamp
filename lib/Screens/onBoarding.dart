@@ -101,6 +101,7 @@ class _onBoardingState extends State<onBoarding> with NavigatorHelper {
                   ),
                   SizedBox(height: 20.h),
                   My_Button(
+                    buttonColor: Theme.of(context).colorScheme.primary,
                     buttonText: appLocale.next.toUpperCase(),
                     buttonRadius: 24.r,
                     textStyle: Theme.of(context).textTheme.displaySmall,
@@ -109,8 +110,8 @@ class _onBoardingState extends State<onBoarding> with NavigatorHelper {
                         setState(() {
                           index++;
                         });
-                      }else{
-                        jump(context, const welcomeScreen(),replace: true);
+                      } else {
+                        jump(context, const welcomeScreen(), replace: true);
                       }
                     },
                   ),
