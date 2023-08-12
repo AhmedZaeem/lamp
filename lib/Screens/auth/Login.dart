@@ -3,8 +3,8 @@ import 'package:flutter_gen/gen_l10n/app_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:lamp/Helpers/NavigatorHelper.dart';
-import 'package:lamp/Screens/Home.dart';
 import 'package:lamp/Screens/auth/forgotPassword.dart';
+import 'package:lamp/Screens/welcomeScreen.dart';
 import 'package:lamp/Widgets/My_Button.dart';
 
 import '../../Widgets/MyTextFormFiled.dart';
@@ -50,7 +50,10 @@ class _LoginState extends State<Login> with NavigatorHelper {
             SizedBox(height: 32.h),
             Text(
               appLocale.loginToYourAccount,
-              style: Theme.of(context).textTheme.displayMedium,
+              style: Theme.of(context)
+                  .textTheme
+                  .displayMedium
+                  ?.copyWith(color: Colors.black),
             ),
             SizedBox(height: 38.h),
             Form(
@@ -102,11 +105,8 @@ class _LoginState extends State<Login> with NavigatorHelper {
                   My_Button(
                     onTap: () {
                       if (_key.currentState!.validate()) {
-                        Navigator.pushAndRemoveUntil(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const Home()),
-                            (route) => false);
+                        jump(context,
+                            const welcomeScreen(isWelcomeScreen: false));
                       }
                     },
                     buttonText: appLocale.login.toUpperCase(),

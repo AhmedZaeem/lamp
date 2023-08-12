@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_gen/gen_l10n/app_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:lamp/Screens/Home.dart';
+import 'package:lamp/Helpers/NavigatorHelper.dart';
+import 'package:lamp/Screens/auth/NewPassword.dart';
 
 import '../../Widgets/My_Button.dart';
 
@@ -15,7 +16,7 @@ class forgotPassword extends StatefulWidget {
   State<forgotPassword> createState() => _forgotPasswordState();
 }
 
-class _forgotPasswordState extends State<forgotPassword> {
+class _forgotPasswordState extends State<forgotPassword> with NavigatorHelper {
   AppLocalizations get appLocale => AppLocalizations.of(context)!;
   bool enabled = false;
   late TextEditingController o1;
@@ -85,7 +86,10 @@ class _forgotPasswordState extends State<forgotPassword> {
                 SizedBox(width: 90.w),
                 Text(
                   appLocale.verification,
-                  style: Theme.of(context).textTheme.displayMedium,
+                  style: Theme.of(context)
+                      .textTheme
+                      .displayMedium
+                      ?.copyWith(color: Colors.black),
                 ),
               ],
             ),
@@ -161,10 +165,7 @@ class _forgotPasswordState extends State<forgotPassword> {
             My_Button(
               buttonText: appLocale.verify,
               enabled: enabled,
-              onTap: () => Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(builder: (context) => const Home()),
-                  (route) => false),
+              onTap: () => jump(context, const NewPassword(), replace: true),
             )
           ],
         ),

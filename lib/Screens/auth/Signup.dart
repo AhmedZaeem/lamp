@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lamp/Helpers/NavigatorHelper.dart';
 import 'package:lamp/Widgets/MyTextFormFiled.dart';
 import 'package:lamp/Widgets/My_Button.dart';
 import 'package:lamp/Widgets/socialMediaIcons.dart';
 
-import '../Home.dart';
+import '../welcomeScreen.dart';
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
@@ -15,7 +16,7 @@ class Signup extends StatefulWidget {
   State<Signup> createState() => _SignupState();
 }
 
-class _SignupState extends State<Signup> {
+class _SignupState extends State<Signup> with NavigatorHelper {
   AppLocalizations get appLocale => AppLocalizations.of(context)!;
   late TextEditingController _emailController;
   late TextEditingController _phoneController;
@@ -60,7 +61,10 @@ class _SignupState extends State<Signup> {
               SizedBox(height: 92.h),
               Text(
                 appLocale.createAccount,
-                style: Theme.of(context).textTheme.displayMedium,
+                style: Theme.of(context)
+                    .textTheme
+                    .displayMedium
+                    ?.copyWith(color: Colors.black),
               ),
               SizedBox(height: 38.h),
               Form(
@@ -195,10 +199,7 @@ class _SignupState extends State<Signup> {
                     setState(() {
                       _genderError = '';
                     });
-                    Navigator.pushAndRemoveUntil(
-                        context,
-                        MaterialPageRoute(builder: (context) => const Home()),
-                        (route) => false);
+                    jump(context, const welcomeScreen(isWelcomeScreen: false));
                   }
                   if (isMale == null) {
                     setState(() {

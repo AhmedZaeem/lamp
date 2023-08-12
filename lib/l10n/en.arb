@@ -29,5 +29,15 @@
  "didNotReceiveEmail" : "Didn't receive email?",
  "youCanResendCodeIn" : "You can resend code in ",
   "resendOTP" : "Click to resend",
-  "verify" : "Verify"
- }
+  "verify" : "Verify",
+  "newPassword" : "New Password",
+  "enterNewPassword" : "Enter New Password.",
+  "complete" : "Complete",
+  "symbolsAtLeast" : "8 Symbols at least",
+  "rewriteThePassword" : "Rewrite the password",
+  "buyer" : "buyer",
+  "seller" : "seller",
+  "home" : "Home",
+  "search" : "Search",
+  "sections" : "Sections"
+   }

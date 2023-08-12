@@ -3,13 +3,15 @@ import 'package:flutter_gen/gen_l10n/app_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lamp/Helpers/NavigatorHelper.dart';
+import 'package:lamp/Screens/Home.dart';
 import 'package:lamp/Screens/auth/Login.dart';
 import 'package:lamp/Widgets/My_Button.dart';
 
 import 'auth/Signup.dart';
 
 class welcomeScreen extends StatefulWidget {
-  const welcomeScreen({super.key});
+  final bool isWelcomeScreen;
+  const welcomeScreen({super.key, this.isWelcomeScreen = true});
 
   @override
   State<welcomeScreen> createState() => _welcomeScreenState();
@@ -35,14 +37,29 @@ class _welcomeScreenState extends State<welcomeScreen> with NavigatorHelper {
               SvgPicture.asset('assets/images/coloredLogo.svg'),
               SizedBox(height: 92.h),
               My_Button(
-                buttonText: appLocale.login.toUpperCase(),
-                onTap: () => jump(context, const Login()),
+                buttonText: widget.isWelcomeScreen
+                    ? appLocale.login.toUpperCase()
+                    : appLocale.buyer.toUpperCase(),
+                onTap: widget.isWelcomeScreen
+                    ? () => jump(context, const Login())
+                    : () => Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(builder: (context) => const Home()),
+                        (route) => false),
                 textStyle: Theme.of(context).textTheme.displaySmall,
               ),
               SizedBox(height: 10.h),
               My_Button(
-                buttonText: appLocale.signup.toUpperCase(),
-                onTap: () => jump(context, const Signup()),
+                buttonText: widget.isWelcomeScreen
+                    ? appLocale.signup.toUpperCase()
+                    : appLocale.seller.toUpperCase(),
+                onTap: widget.isWelcomeScreen
+                    ? () => jump(context, const Signup())
+                    : () => Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Home(isBuyer: false)),
+                        (route) => false),
                 buttonColor: Colors.white,
                 textStyle: Theme.of(context)
                     .textTheme

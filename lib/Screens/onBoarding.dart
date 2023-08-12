@@ -57,7 +57,7 @@ class _onBoardingState extends State<onBoarding> with NavigatorHelper {
             padding: EdgeInsets.symmetric(horizontal: 19.w, vertical: 55.h),
             child: BackdropFilter(
               filter: ImageFilter.blur(
-                  sigmaX: 10.0, sigmaY: 10.0, tileMode: TileMode.repeated),
+                  sigmaX: 16.0, sigmaY: 16.0, tileMode: TileMode.repeated),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.start,
