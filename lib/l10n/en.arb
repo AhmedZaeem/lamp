@@ -39,5 +39,16 @@
   "seller" : "seller",
   "home" : "Home",
   "search" : "Search",
-  "sections" : "Sections"
-   }
+  "sections" : "Sections",
+  "myAccount" : "My Account",
+  "editProfile" : "Edit Profile",
+  "basket" : "Basket",
+  "information" : "Information",
+  "logOut"  : "Log Out",
+  "current": "Current",
+  "previous" : "Previous",
+  "chat":"chat",
+  "typeAMsg" : "Type a message...",
+  "cancel" : "cancel"
+
+    }

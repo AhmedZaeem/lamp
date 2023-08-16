@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lamp/Helpers/NavigatorHelper.dart';
 import 'package:lamp/Screens/HomeViews/BuyerHomeView.dart';
 import 'package:lamp/Screens/HomeViews/CartView.dart';
 import 'package:lamp/Screens/HomeViews/ContactView.dart';
@@ -16,19 +17,19 @@ class Home extends StatefulWidget {
   State<Home> createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends State<Home> with NavigatorHelper {
   int _index = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primary,
+      backgroundColor:
+          _index == 0 ? Theme.of(context).colorScheme.primary : Colors.white,
       body: Stack(
         children: [
           [
             widget.isBuyer ? const BuyerHomeView() : const SellerHomeView(),
             const CartView(),
             const SearchView(),
-            const ContactView(),
             const ProfileView(),
           ][_index],
           PositionedDirectional(
@@ -55,8 +56,11 @@ class _HomeState extends State<Home> {
                   _buildBottomNavBarItem('Home', 0),
                   _buildBottomNavBarItem('cart', 1),
                   _buildBottomNavBarItem('search', 2),
-                  _buildBottomNavBarItem('contact', 3),
-                  _buildBottomNavBarItem('profile', 4),
+                  IconButton(
+                    icon: SvgPicture.asset('assets/images/contact.svg'),
+                    onPressed: () => jump(context, const ContactView()),
+                  ),
+                  _buildBottomNavBarItem('profile', 3),
                 ],
               ),
             ),
