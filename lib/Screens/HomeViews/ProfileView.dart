@@ -3,6 +3,8 @@ import 'package:flutter_gen/gen_l10n/app_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lamp/Helpers/NavigatorHelper.dart';
+import 'package:lamp/Screens/EditProfile.dart';
+import 'package:lamp/Screens/TermsAndCondtions.dart';
 import 'package:lamp/Widgets/My_Button.dart';
 
 class ProfileView extends StatefulWidget {
@@ -67,6 +69,9 @@ class _ProfileViewState extends State<ProfileView> with NavigatorHelper {
           child: My_Button(
             buttonText: appLocale.editProfile,
             buttonRadius: 26,
+            onTap: () {
+              jump(context, const EditProfile());
+            },
             textStyle: TextStyle(
               color: Colors.white,
               fontSize: 18.sp,
@@ -88,7 +93,9 @@ class _ProfileViewState extends State<ProfileView> with NavigatorHelper {
             MyListTile(
               title: appLocale.information,
               icon: 'info',
-              onTap: () {},
+              onTap: () {
+                jump(context, const TermsAndConditions());
+              },
             ),
             SizedBox(height: 20.h),
             MyListTile(
