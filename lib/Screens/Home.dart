@@ -22,6 +22,10 @@ class _HomeState extends State<Home> with NavigatorHelper {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset:
+          (_index == 0 && widget.isBuyer) == false || _index != 2
+              ? false
+              : true,
       backgroundColor:
           _index == 0 ? Theme.of(context).colorScheme.primary : Colors.white,
       body: Stack(

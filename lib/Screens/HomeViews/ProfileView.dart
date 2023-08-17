@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:lamp/Helpers/NavigatorHelper.dart';
 import 'package:lamp/Widgets/My_Button.dart';
 
 class ProfileView extends StatefulWidget {
@@ -11,7 +12,7 @@ class ProfileView extends StatefulWidget {
   State<ProfileView> createState() => _ProfileViewState();
 }
 
-class _ProfileViewState extends State<ProfileView> {
+class _ProfileViewState extends State<ProfileView> with NavigatorHelper {
   AppLocalizations get appLocale => AppLocalizations.of(context)!;
 
   @override
@@ -45,7 +46,7 @@ class _ProfileViewState extends State<ProfileView> {
                     border: Border.all(
                         color: Theme.of(context).colorScheme.primary,
                         width: 1.w),
-                    image: DecorationImage(
+                    image: const DecorationImage(
                       image: AssetImage('assets/images/profile.png'),
                     ),
                   ),

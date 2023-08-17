@@ -10,6 +10,8 @@ class MyTextFormField extends StatelessWidget {
   final double borderRadius;
   final bool isObscure;
   final TextInputType? keyboardType;
+  final OutlineInputBorder? border;
+  final OutlineInputBorder? focusBorder;
   const MyTextFormField({
     super.key,
     this.keyboardType,
@@ -20,6 +22,8 @@ class MyTextFormField extends StatelessWidget {
     this.isObscure = false,
     this.filled = true,
     this.borderRadius = 50,
+    this.border,
+    this.focusBorder,
   });
 
   @override
@@ -32,11 +36,14 @@ class MyTextFormField extends StatelessWidget {
         filled: filled,
         hintText: hint,
         errorText: errorMessage,
+        enabledBorder: border,
+        focusedBorder: focusBorder,
         fillColor: Theme.of(context).colorScheme.primary.withOpacity(.27),
-        border: OutlineInputBorder(
-          borderSide: BorderSide.none,
-          borderRadius: BorderRadius.circular(borderRadius.r),
-        ),
+        border: border ??
+            OutlineInputBorder(
+              borderSide: BorderSide.none,
+              borderRadius: BorderRadius.circular(borderRadius.r),
+            ),
       ),
       validator: validator,
     );

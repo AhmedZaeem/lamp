@@ -33,6 +33,8 @@ dependencies:
   flutter_screenutil: ^5.8.4
   flutter_svg: ^2.0.7
   http: ^1.1.0
+  cool_dropdown: ^2.1.0
+  table_calendar: ^3.0.9
   intl:
   flutter_localizations:
     sdk: flutter
