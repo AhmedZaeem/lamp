@@ -43,6 +43,7 @@ class _AddCreditCardState extends State<AddCreditCard> with NavigatorHelper {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Theme.of(context).colorScheme.primary,
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -98,7 +99,7 @@ class _AddCreditCardState extends State<AddCreditCard> with NavigatorHelper {
                     children: [
                       Expanded(
                         child: MyTextFormField(
-                          controller: _nameController,
+                          controller: _cardNumberController,
                           filled: false,
                           hint: '**** - **** -  **** - **85',
                           focusBorder: buildOutlineInputBorder(context),
@@ -135,7 +136,7 @@ class _AddCreditCardState extends State<AddCreditCard> with NavigatorHelper {
                     children: <Widget>[
                       Expanded(
                         child: MyTextFormField(
-                          controller: _nameController,
+                          controller: _expireDateController,
                           filled: false,
                           hint: '10/27/2030',
                           focusBorder: buildOutlineInputBorder(context),
@@ -145,7 +146,7 @@ class _AddCreditCardState extends State<AddCreditCard> with NavigatorHelper {
                       SizedBox(width: 10.w),
                       Expanded(
                         child: MyTextFormField(
-                          controller: _nameController,
+                          controller: _cvvController,
                           filled: false,
                           hint: '* * * *',
                           focusBorder: buildOutlineInputBorder(context),
@@ -157,7 +158,7 @@ class _AddCreditCardState extends State<AddCreditCard> with NavigatorHelper {
                 ],
               ),
             ),
-            SizedBox(height: 160.h),
+            SizedBox(height: 140.h),
             Text(
               'Debit cards are accepted at some locations',
               style: buildTextStyle(),
@@ -170,7 +171,7 @@ class _AddCreditCardState extends State<AddCreditCard> with NavigatorHelper {
                 (index) => Image.asset('assets/images/pay${index + 1}.png'),
               ),
             ),
-            SizedBox(height: 30.h),
+            SizedBox(height: 20.h),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 70.w),
               child: My_Button(

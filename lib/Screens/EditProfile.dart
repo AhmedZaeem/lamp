@@ -103,24 +103,12 @@ class _EditProfileState extends State<EditProfile> with NavigatorHelper {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'First name',
+                    'Full name',
                     style: textStyle(),
                   ),
                   SizedBox(height: 8.h),
                   MyProfileField(
-                    hint: 'John',
-                    onTap: () {
-                      jump(context, const EditFiled(index: 0));
-                    },
-                  ),
-                  SizedBox(height: 16.h),
-                  Text(
-                    'Last name',
-                    style: textStyle(),
-                  ),
-                  SizedBox(height: 8.h),
-                  MyProfileField(
-                    hint: 'Pham',
+                    hint: 'John Pham',
                     onTap: () {
                       jump(context, const EditFiled(index: 1));
                     },
@@ -138,7 +126,7 @@ class _EditProfileState extends State<EditProfile> with NavigatorHelper {
                     },
                     leading: Text('Verified',
                         style: TextStyle(
-                          color: const Color(0xffFECC2A),
+                          color: const Color(0xff00A811),
                           fontSize: 12.sp,
                         )),
                   ),

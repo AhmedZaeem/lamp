@@ -43,9 +43,8 @@ class _LoginState extends State<Login> with NavigatorHelper {
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 43.w),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 121.h),
+            SizedBox(height: 71.h),
             Center(child: SvgPicture.asset('assets/images/coloredLogo.svg')),
             SizedBox(height: 32.h),
             Text(
@@ -86,18 +85,15 @@ class _LoginState extends State<Login> with NavigatorHelper {
                     },
                   ),
                   SizedBox(height: 10.h),
-                  Align(
-                    alignment: AlignmentDirectional.centerEnd,
-                    child: GestureDetector(
-                      onTap: () {
-                        jump(context, const forgotPassword());
-                      },
-                      child: Text(
-                        appLocale.forgotPassword,
-                        style: TextStyle(
-                          fontSize: 14.sp,
-                          color: Theme.of(context).colorScheme.primary,
-                        ),
+                  GestureDetector(
+                    onTap: () {
+                      jump(context, const forgotPassword());
+                    },
+                    child: Text(
+                      appLocale.forgotPassword,
+                      style: TextStyle(
+                        fontSize: 14.sp,
+                        color: Theme.of(context).colorScheme.primary,
                       ),
                     ),
                   ),

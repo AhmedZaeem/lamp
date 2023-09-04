@@ -69,7 +69,7 @@ class _CartViewState extends State<CartView> {
                       format.format(cartItems[index].dateOfDelivery);
                   return Container(
                     clipBehavior: Clip.antiAlias,
-                    height: 142.h,
+                    height: 152.h,
                     width: double.infinity,
                     decoration: BoxDecoration(
                       border: Border.all(

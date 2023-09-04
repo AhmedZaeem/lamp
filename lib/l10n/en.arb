@@ -7,7 +7,7 @@
  "welcome" : "Welcome",
  "login" : "log in",
  "signup" : "sign up",
- "loginToYourAccount" : "Login To Your Account",
+ "loginToYourAccount" : "Login",
  "userName" : "User Name",
  "password" : "password",
  "fullName" : "Full Name",
@@ -18,7 +18,7 @@
  "forgotPassword" : "Forgot password??",
  "thisFieldIsRequired" : "This filed is required!",
  "thePasswordIsWrong" : "The password must be at least 6 characters",
- "createAccount" : "Create Account",
+ "createAccount" : "Registration",
  "or" : "or",
  "male" : "Male",
  "female" : "Female",
@@ -68,5 +68,6 @@
   "payment" : "Payment",
   "paymentDescription" : "Choose desired vehicle type. We offer cars suitable for most every day needs.",
   "paymentMethods" : "Payment methods",
-  "addCreditCard" : "Add credit card"
+  "addCreditCard" : "Add credit card",
+  "iAlreadyHaveAnAccount" : "I already have account"
     }

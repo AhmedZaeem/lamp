@@ -132,7 +132,7 @@ class _MessegesViewState extends State<ContactView> {
           Container(
             height: 110.h,
             width: double.infinity,
-            padding: EdgeInsets.only(right: 16.w, left: 16.w, top: 10.h),
+            padding: EdgeInsets.only(right: 8.w, left: 8.w, top: 10.h),
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(color: const Color(0xff707070), width: 1.w),
@@ -145,7 +145,7 @@ class _MessegesViewState extends State<ContactView> {
                   margin: EdgeInsets.symmetric(vertical: 4.h),
                   child: SizedBox(
                     height: 40.h,
-                    width: 297.w,
+                    width: 310.w,
                     child: TextField(
                       textAlignVertical: TextAlignVertical.bottom,
                       onSubmitted: (value) {},

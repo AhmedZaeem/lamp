@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localization.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:lamp/Helpers/NavigatorHelper.dart';
 import 'package:lamp/Widgets/MyTextFormFiled.dart';
 import 'package:lamp/Widgets/My_Button.dart';
 import 'package:lamp/Widgets/socialMediaIcons.dart';
 
 import '../welcomeScreen.dart';
+import 'Login.dart';
 
 class Signup extends StatefulWidget {
   const Signup({super.key});
@@ -56,9 +56,8 @@ class _SignupState extends State<Signup> with NavigatorHelper {
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 43.w),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 92.h),
+              SizedBox(height: 42.h),
               Text(
                 appLocale.createAccount,
                 style: Theme.of(context)
@@ -156,27 +155,25 @@ class _SignupState extends State<Signup> with NavigatorHelper {
                 ),
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Radio(
                     value: true,
                     groupValue: isMale,
                     onChanged: (value) => setState(() => isMale = value!),
                   ),
-                  SvgPicture.asset('assets/images/male.svg'),
-                  SizedBox(width: 4.w),
                   Text(
                     appLocale.male,
                     style: TextStyle(
                         fontSize: 14.sp,
                         color: Theme.of(context).colorScheme.primary),
                   ),
+                  SizedBox(width: 21.w),
                   Radio(
                     value: false,
                     groupValue: isMale,
                     onChanged: (value) => setState(() => isMale = value!),
                   ),
-                  SvgPicture.asset('assets/images/female.svg'),
-                  SizedBox(width: 4.w),
                   Text(
                     appLocale.female,
                     style: TextStyle(
@@ -185,23 +182,39 @@ class _SignupState extends State<Signup> with NavigatorHelper {
                   ),
                 ],
               ),
+              SizedBox(height: 8.h),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
                 child: Text(
                   _genderError,
-                  style: TextStyle(color: Colors.red),
+                  style: const TextStyle(color: Colors.red),
                 ),
               ),
-              SizedBox(height: 25.h),
+              SizedBox(height: 4.h),
+              GestureDetector(
+                onTap: () {
+                  jump(context, const Login(), replace: true);
+                },
+                child: Text(
+                  appLocale.iAlreadyHaveAnAccount,
+                  style: TextStyle(
+                      fontSize: 14.sp,
+                      color: Theme.of(context).colorScheme.primary),
+                ),
+              ),
+              SizedBox(height: 16.h),
               My_Button(
                 onTap: () {
                   if (_key.currentState!.validate() && isMale != null) {
+
+                    jump(context, const welcomeScreen(isWelcomeScreen: false));
+                  }
+                  if (isMale != null) {
                     setState(() {
                       _genderError = '';
                     });
-                    jump(context, const welcomeScreen(isWelcomeScreen: false));
                   }
-                  if (isMale == null) {
+                  else {
                     setState(() {
                       _genderError = 'Please choose a gender';
                     });

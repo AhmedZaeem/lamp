@@ -66,15 +66,22 @@ class _ProfileViewState extends State<ProfileView> with NavigatorHelper {
         SizedBox(height: 28.h),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 95.w),
-          child: My_Button(
-            buttonText: appLocale.editProfile,
-            buttonRadius: 26,
-            onTap: () {
-              jump(context, const EditProfile());
-            },
-            textStyle: TextStyle(
-              color: Colors.white,
-              fontSize: 18.sp,
+          child: Material(
+            elevation: 5.h,
+            shape: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(95.r),
+                borderSide: BorderSide.none),
+            color: Colors.black,
+            child: My_Button(
+              buttonText: appLocale.editProfile,
+              buttonRadius: 26,
+              onTap: () {
+                jump(context, const EditProfile());
+              },
+              textStyle: TextStyle(
+                color: Colors.white,
+                fontSize: 18.sp,
+              ),
             ),
           ),
         ),

@@ -18,15 +18,13 @@ class _EditFiledState extends State<EditFiled> {
   void initState() {
     super.initState();
     _textController = TextEditingController(
-        text: widget.index == 0
-            ? 'John'
-            : widget.index == 1
-                ? 'Pham'
-                : widget.index == 2
-                    ? '0591321564894'
-                    : widget.index == 3
-                        ? 'johnpham789@gmail.com'
-                        : '');
+        text: widget.index == 1
+            ? 'John Pham'
+            : widget.index == 2
+                ? '0591321564894'
+                : widget.index == 3
+                    ? 'johnpham789@gmail.com'
+                    : '');
     _passwordConfirmController = TextEditingController();
   }
 
@@ -39,15 +37,13 @@ class _EditFiledState extends State<EditFiled> {
 
   @override
   Widget build(BuildContext context) {
-    String field = widget.index == 0
-        ? 'First name'
-        : widget.index == 1
-            ? 'Lst name'
-            : widget.index == 2
-                ? 'Phone Number'
-                : widget.index == 3
-                    ? 'Email'
-                    : 'Password';
+    String field = widget.index == 1
+        ? 'Full name'
+        : widget.index == 2
+            ? 'Phone Number'
+            : widget.index == 3
+                ? 'Email'
+                : 'Password';
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Column(
